@@ -13,6 +13,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 ENV PORT 8080
 
+COPY server/ /app
 WORKDIR /app
 COPY . .
 CMD exec gunicorn --bind :$PORT --workers 3 app:app
