@@ -1,9 +1,10 @@
 version: "3.9"
 services:
   api:
-    container_name: flask-container
     build: .
     image: kaneai/flask-reoload:v1
+    container_name: flask-container
+    restart: always
     env_file:
       - .env
     ports:
